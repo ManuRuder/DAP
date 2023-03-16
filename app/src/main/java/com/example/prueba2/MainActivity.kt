@@ -7,25 +7,34 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var txtLabel : textView
-    lateinit var btnChangeText : buttonShow
-    lateinit var btnChangeText : buttonHide
-
-    var size : Float =
+    TextView tv;
+    Button btn1;
+    Button btn2:
 
         override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        txtLabel = findViewById(R.id.txtLabel)                 //Referencia de vistas al xml
-        btnChangeText = findViewById(R.id.btnChangText)
+            tv = (TextView) findViewByid(R.id.textView);              //Referencia de vistas al xml
+            btn1 = (Button) findViewByid(R.id.buttonShow);
+            btn2 = (Button) findViewByid(R.id.buttonHide);
 
+            btn1.setOnClickListener(new View.On.ClickListener() {
+            public void onClick(View v){
+             tv.setText("Hola");
 
-        btnChangeText.setOnClickListener {
+            }
 
-            txtLabel.text = "texto cambiado"
-            txtLabel.textSize
+            } );
+            btn2.setOnClickListener(new View.On.ClickListener() {
+                public void onClick(View v){
+                    tv.setText("");
+
+                }
+
+            } );
+
 
         }
     }
